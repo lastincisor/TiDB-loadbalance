@@ -16,6 +16,11 @@ tidb-loadbalance
 
 CHANGE LOG:
 -----------
+Version 0.0.7
+--------------------------------------
++ parser url '&amp'
+
+
 Version 0.0.6
 --------------------------------------
 + support JDBC 5.x
