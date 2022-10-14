@@ -262,7 +262,8 @@ public class LoadBalancingDriver implements Driver {
 
   @Override
   public Connection connect(final String tidbUrl, final Properties info) throws SQLException {
-    String mysqlUrl = getMySqlUrl(tidbUrl);
+    String escapaTidbUrl = ConnUrlParser.escapar(tidbUrl);
+    String mysqlUrl = getMySqlUrl(escapaTidbUrl);
     Function<Backend, String[]> mapper = createUrlsMapper();
     if(mapper != null){
       this.urlMapper = mapper;

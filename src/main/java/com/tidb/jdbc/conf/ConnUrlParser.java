@@ -39,6 +39,17 @@ public class ConnUrlParser {
         return new ConnUrlParser(connString);
     }
 
+    public static String escapar(String sourceStr){
+        String sourceConnString = sourceStr;
+        if(sourceStr.contains("&amp;")){
+            sourceConnString = sourceStr.replaceAll("&amp;","&");
+        }
+        if(sourceConnString.contains("amp;")){
+            sourceConnString = sourceConnString.replaceAll("amp;","");
+        }
+        return sourceConnString;
+    }
+
     private ConnUrlParser(String connString) {
         if (connString == null) {
             String messages = "The database URL cannot be null.";
